@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> MND News Time — Printed Style (Fluid)</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Basic reset */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fbf9f5;     /* paper tint */
+      font-family: 'Libre Baskerville', serif;
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container: fluid width, but constrained so it looks like a page */
+    .page {
+      max-width: 1100px;      /* controls comfortable reading width; change as needed */
+      margin: 24px auto;
+      background: #fffefb;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Masthead */
+    header.masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #111;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .masthead .title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 44px;
+      letter-spacing: 2px;
+      color: #000;
+    }
+    .masthead .meta {
+      text-align: right;
+      font-size: 12px;
+      color: #222;
+    }
+    .masthead .meta .edition { font-weight: 700; }
+
+    /* Lead headline area */
+    .lead { margin-top: 14px; margin-bottom: 10px; }
+    h1.headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      margin: 6px 0 6px;
+      line-height: 1.05;
+    }
+    .byline { font-size: 11px; color: #444; margin-bottom: 12px; }
+
+    /* Two-column grid: main + sidebar */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      grid-gap: 18px;
+    }
+
+    /* Main newspaper columns */
+    .main {
+      column-count: 3;
+      column-gap: 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .article { display: inline-block; width: 100%; margin-bottom: 14px; }
+
+    /* Drop cap for the first paragraph of lead article */
+    .dropcap::first-letter {
+      float: left;
+      font-size: 48px;
+      line-height: 42px;
+      padding-right: 8px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Sidebar */
+    aside.sidebar { border-left: 1px solid #e0e0e0; padding-left: 12px; font-size: 13px; }
+    .box { background:#fbfbfb; border:1px solid #e9e9e9; padding:10px; margin-bottom:12px; }
+    .small-title { font-weight:700; font-size:13px; margin-bottom:6px; }
+
+    /* Images and captions */
+    .img { width:100%; height:auto; display:block; margin-bottom:8px; }
+    .caption { font-size:11px; color:#666; margin-bottom:8px; }
+
+    /* Small headings inside columns */
+    .kicker { font-weight:700; font-size:11px; text-transform:uppercase; color:#222; margin-bottom:6px; }
+
+    /* Footer */
+    footer { margin-top:18px; border-top:1px solid #e6e6e6; padding-top:10px; font-size:11px; color:#666; }
+
+    /* Print-friendly tweaks (no forced size) */
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; padding: 18mm; }
+      /* Avoid page breaks inside articles where possible */
+      .article { break-inside: avoid-column; -webkit-column-break-inside: avoid; page-break-inside: avoid; }
+    }
+
+    /* Responsive: narrow screens -> single column + 2 newspaper columns */
+    @media (max-width: 920px) {
+      .page { margin: 12px; padding: 18px; }
+      .content { grid-template-columns: 1fr; }
+      .main { column-count: 2; }
+    }
+
+    /* Tiny screens: single column reading */
+    @media (max-width: 520px) {
+      .main { column-count: 1; font-size: 15px; }
+      .masthead .title { font-size: 28px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <header class="masthead">
+      <div>
+        <div class="title">NEWS TIME</div>
+        <div style="font-size:12px; color:#333; margin-top:4px;">Independent • Since 2001</div>
+      </div>
+      <div class="meta">
+        <div class="edition">Monday, Aug 11, 2025</div>
+        <div>Volume 24 • No. 198</div>
+      </div>
+    </header>
+
+    <section class="lead">
+      <h1 class="headline">Markets Stabilize as Economic Signals Improve</h1>
+      <div class="byline">By Priya Menon • Financial Desk</div>
+    </section>
+
+    <div class="content">
+      <main class="main">
+        <article class="article">
+            <img class="img" src="https://tse2.mm.bing.net/th/id/OIP.M0JrL2moehBkBmBYvy7ibAHaE8?pid=Api&P=0&h=180">
+          <p class="dropcap">M</p>
+          <p class="dropcap">arkets across the globe found calm today after a series of volatile sessions. Traders reacted to a blend of economic data and central bank commentary that suggested a gradual path for interest rate policy. Technology and consumer stocks were among the leaders in early trading.</p>
+
+          <p>Investors noted that while inflation remains above central bank targets in several regions, recent indicators point toward cooling price pressures in key sectors. This helped ease short-term recession fears and allowed risk appetite to return to the markets.</p>
+
+          <h4 class="kicker">Sector roundup</h4>
+          <p>Semiconductor and cloud-computing firms posted strong quarterly figures, while energy stocks lagged after a drop in crude prices. Analysts cautioned that upcoming inflation and jobs reports could sway sentiment again.</p>
+        </article>
+
+        <article class="article">
+          <h4 class="kicker">Local: Riverside Park Opens</h4>
+          <p>The newly redesigned Riverside Park welcomed residents today with ribbon-cutting ceremonies and community events. The park features walking trails, children's play areas and community gardens.</p>
+        </article>
+
+        <article class="article">
+          <h4 class="kicker">Opinion: Rethinking City Mobility</h4>
+          <p>As cities grow, community-focused transit planning can reduce congestion and improve access. Investing in bike lanes and public transit will be critical to future livability.</p>
+        </article>
+
+        <article class="article">
+          <h4 class="kicker">Culture</h4>
+          <p>New exhibits at the city museum explore local history and contemporary art, with interactive displays aimed at younger visitors.</p>
+        </article>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="small-title">Markets Snapshot</div>
+          <div><strong>Dow</strong> +0.8% • <strong>S&P</strong> +0.6% • <strong>Nasdaq</strong> +1.1%</div>
+        </div>
+
+        <div class="box">
+          <img class="img" src="https://tse2.mm.bing.net/th/id/OIP.qWZTH4XC4M3PX8Upk8tqFQHaEb?pid=Api&P=0&h=180" alt="chart">
+          <div class="caption">Intraday market performance</div>
+        </div>
+
+        <div class="box">
+          <div class="small-title">Weather</div>
+          <div>Sunny • High 31°C • Low 22°C</div>
+        </div>
+
+        <div class="box">
+          <div class="small-title">Events</div>
+          <p>Farmers Market — Sat 8AM–2PM<br>Riverside Concert — Sun 6PM</p>
+        </div>
+
+        <div class="box">
+          <div class="small-title">Contact</div>
+          <p>tips@newstime.example • ads@newstime.example</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      &copy; 2025 News Time — All rights reserved. Printed edition. For reprints contact editorial@newstime.example
+    </footer>
+  </div>
+
+</body>
+</html>
